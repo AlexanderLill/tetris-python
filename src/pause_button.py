@@ -1,5 +1,5 @@
 import pygame
-
+import os
 
 class PauseButton(object):
     """
@@ -22,10 +22,12 @@ class PauseButton(object):
         Determines whether or not the game is in its ‘paused’ state.
         """
 
-        dir1 = "pause-button1.png"
-        dir2 = "pause-button2.png"
-        dir3 = "resume-button1.png"
-        dir4 = "resume-button2.png"
+        # Get current working dir
+        cwd = os.path.join(os.getcwd(), "src")
+        dir1 = os.path.join(cwd, "pause-button1.png")
+        dir2 = os.path.join(cwd, "pause-button2.png")
+        dir3 = os.path.join(cwd, "resume-button1.png")
+        dir4 = os.path.join(cwd, "resume-button2.png")
 
         # Load all the images to be used for the button, and set them to the 'image' attributes
         self.pause_image = pygame.image.load(dir1)
